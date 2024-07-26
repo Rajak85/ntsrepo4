@@ -7,15 +7,17 @@ pipeline {
       }
     }
 
-    stage('Deploy_DEV') {
+    stage('Deploy_DEV & QA') {
       parallel {
         stage('Deploy_DEV') {
+          agent any
           steps {
             echo 'DEV stage success'
           }
         }
 
         stage('Deply_QA') {
+          agent any
           steps {
             echo 'QA stage success'
           }
